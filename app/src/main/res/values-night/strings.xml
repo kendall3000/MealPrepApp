@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="add_allergy">Add Allergy</string>
+    <string name="meal_plans">MEAL PLANS</string>
+    <string name="view_allergies">View Allergies</string>
+    <string name="remove_allergy">Remove Allergy</string>
+    <string name="calculate_bmi">Calculate BMI</string>
+    <string name="button">Button</string>
+    <string name="weight">Weight:</string>
+    <string name="heightHint">Height in cm</string>
+</resources>

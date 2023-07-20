@@ -1,14 +1,186 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Base.Theme.Prep365"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#9EADC8">
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="89dp"
+        android:layout_height="103dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="261dp"
+        android:layout_marginBottom="581dp"
+        android:contentDescription="@string/prep365_logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/prep365clear" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/addAllergyButton"
+        style="@style/Base.Theme.Prep365"
+        android:layout_width="141dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="4dp"
+        android:text="@string/add_allergy"
+        app:layout_constraintBottom_toTopOf="@+id/removeAllergyButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.518"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/viewAllergiesButton"
+        style="@style/Base.Theme.Prep365"
+        android:layout_width="147dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="468dp"
+        android:text="@string/view_allergies"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.518"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/removeAllergyButton"
+        style="@style/Base.Theme.Prep365"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="160dp"
-        tools:layout_editor_absoluteY="100dp" />
+        android:layout_marginTop="412dp"
+        android:text="@string/remove_allergy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/mealPlanButton"
+        style="@style/Base.Theme.Prep365"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="607dp"
+        android:text="@string/meal_plans"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/weightInput"
+        style="@style/Widget.AppCompat.EditText"
+        android:layout_width="139dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="108dp"
+        android:ems="10"
+        android:hint="@string/WeightHint"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/heightInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/weightText"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.806"
+        tools:ignore="TextContrastCheck" />
+
+    <EditText
+        android:id="@+id/heightInput"
+        style="@style/Widget.AppCompat.EditText"
+        android:layout_width="142dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="4dp"
+
+        android:ems="10"
+        android:hint="@string/heightHint"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/calculateBMIbutton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.017"
+        app:layout_constraintStart_toEndOf="@+id/heightText"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/heightText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginBottom="12dp"
+        android:text="@string/height"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/calculateBMIbutton"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/calculateBMIbutton"
+        style="@style/Base.Theme.Prep365"
+        android:layout_width="178dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="72dp"
+        android:bottomLeftRadius="10dp"
+        android:bottomRightRadius="10dp"
+        android:text="@string/calculate_bmi"
+        android:topLeftRadius="10dp"
+        android:topRightRadius="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/addAllergyButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/calculatedBMI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/calculatedBMIText"
+        android:textColor="#01579B"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/addAllergyButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calculateBMIbutton"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <TextView
+        android:id="@+id/weightText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:text="@string/weight"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/heightText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.72"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/BMITitle"
+        android:layout_width="157dp"
+        android:layout_height="34dp"
+        android:text="@string/bmi_title"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.551"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.094"
+        tools:ignore="TextSizeCheck" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
