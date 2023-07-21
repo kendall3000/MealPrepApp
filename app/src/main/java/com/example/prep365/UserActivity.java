@@ -11,12 +11,7 @@ import android.widget.Toast;
 
 public class UserActivity extends AppCompatActivity {
 
-    private EditText weightField;
-    private EditText heightField;
-    private TextView bmiField;
-    private Button addAllergyButton;
-
-    private Profile profile;
+    Profile profile;
 
      @SuppressLint("DefaultLocale")
      @Override
@@ -24,18 +19,23 @@ public class UserActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user);
 
-        weightField = findViewById(R.id.weightInput);
-        heightField = findViewById(R.id.heightInput);
+        EditText weightField = findViewById(R.id.weightInput);
+        EditText heightField = findViewById(R.id.heightInput);
         Button calculateBMIButton = findViewById(R.id.calculateBMIbutton);
-        bmiField = findViewById(R.id.calculatedBMI);
+        TextView bmiField = findViewById(R.id.calculatedBMI);
         TextView bmiClassField = findViewById(R.id.bmiClass);
+        profile = new Profile();
 
          calculateBMIButton.setOnClickListener(view -> {
              String w, h;
-             if ((w = String.valueOf(weightField.getText())).isEmpty() || (h = String.valueOf(heightField.getText())).isEmpty()) {
+             if ((w = String.valueOf(weightField.getText())).isEmpty()
+                     || (h = String.valueOf(heightField.getText())).isEmpty()
+                     || Double.parseDouble(w) < 1) {
                  Toast.makeText(UserActivity.this, "Weight or height field empty/invalid", Toast.LENGTH_SHORT).show();
              } else {
-                 profile = new Profile(Double.parseDouble(w), Double.parseDouble(h));
+                 profile.setWeight(Double.parseDouble((w)));
+                 profile.setHeight(Double.parseDouble((h)));
+                 profile.calculateBMI();
                  bmiField.setText(String.format("BMI: %.2f", profile.getBmi()));
                  bmiClassField.setText(String.format("BMI Range: %s", profile.bmiClass.toString()));
              }
