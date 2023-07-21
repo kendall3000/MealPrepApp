@@ -13,4 +13,5 @@
     <string name="WeightHint">Weight in kg</string>
     <string name="calculatedBMIText">BMI: 0.0</string>
     <string name="bmi_title">BMI Information</string>
+    <string name="classification_text"> </string>
 </resources>

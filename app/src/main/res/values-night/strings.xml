@@ -1,11 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">prep365</string>
+    <string name="prep365_logo">Prep365 logo</string>
     <string name="add_allergy">Add Allergy</string>
-    <string name="meal_plans">MEAL PLANS</string>
+    <string name="meal_plans">GENERATE MEAL PLAN</string>
     <string name="view_allergies">View Allergies</string>
     <string name="remove_allergy">Remove Allergy</string>
     <string name="calculate_bmi">Calculate BMI</string>
-    <string name="button">Button</string>
+    <string name="bmi_info_area">BMI Input Area</string>
     <string name="weight">Weight:</string>
+    <string name="height">Height:</string>
     <string name="heightHint">Height in cm</string>
+    <string name="WeightHint">Weight in kg</string>
+    <string name="calculatedBMIText">BMI: 0.0</string>
+    <string name="bmi_title">BMI Information</string>
+    <string name="classification_text"> </string>
 </resources>
