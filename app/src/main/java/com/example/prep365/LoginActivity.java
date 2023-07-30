@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.Button;
+
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -63,7 +63,7 @@ public class LoginActivity extends AppCompatActivity {
 
             boolean verified = manager.verifyCredentials(username, password);
             if (verified) {
-                openUserActivity();
+                openUserActivity(username);
             } else {
                 Toast.makeText(this, "Invalid username or password.", Toast.LENGTH_SHORT).show();
             }
@@ -74,8 +74,9 @@ public class LoginActivity extends AppCompatActivity {
         return TextUtils.isEmpty(info);
     }
 
-    private void openUserActivity() {
+    private void openUserActivity(String username) {
         Intent intent = new Intent(this, UserActivity.class);
+        intent.putExtra("current_user", username);
         startActivity(intent);
     }
 
